@@ -1,0 +1,480 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<style>
+	
+	@import "compass/css3";
+
+		body{
+			font-family: sans-serif;
+			position:relative;
+		}
+
+		.dailyHeader{
+			margin: auto;
+			margin-top: 2em;
+			margin-bottom: 7em;
+		    width: 70%;
+		    padding: 10px;
+		    padding-top: 13%;
+		    height: 40%;
+		    text-align: right;
+		    font-style: italic;
+		    position: relative;
+		    /*border: 1px solid red ;*/
+		}
+		.dailyWriting{
+			text-align: center;
+			font-weight: bold;
+			font-size: 6vw;
+			font-style: normal;
+			position: relative;
+		}
+		.header{
+			font-family: serif;
+			font-style: italic;
+			font-weight: bold;	
+		}
+		#title{
+			font-size: 1.5em;
+			text-align: center;
+			position:fixed;
+			top:10px;
+			margin-left: auto;
+			margin-right: auto;
+			left:0;
+			right:0;
+			z-index: 1;
+			opacity: 1;
+		}
+		#menu{
+			text-align: center;
+			position:fixed;
+			top:20px;
+			margin-left: auto;
+			margin-right: auto;
+			left:0;
+			right:0;
+			z-index: 0;
+			opacity:0;
+		}
+		#writing2{
+			font-size: 4vw;
+		}
+		#writing3{
+			font-size: 3.5vw;
+		}
+		#writing4{
+			font-size: 3vw;
+		}
+		#writing5{
+			font-size: 1.7vw;
+		}
+		#writing7{
+			font-size: 2.3vw;
+		}
+		.spacer{
+			height: 85%;
+		}
+		#upsidedown
+		{
+			-webkit-transform:rotate(-180deg);
+			-moz-transform:rotate(-180deg);
+			-o-transform:rotate(-180deg); 
+			transform: rotate(-180deg);
+		}
+		#verticalstretch
+		{
+			-webkit-transform:scale(1,5);
+			-moz-transform:scale(1,5);
+			-o-transform:scale(1,5); 
+			transform: scale(1,5);
+		}
+		#writing6{
+			font-size: 4vw;
+			font-weight: normal;
+			text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black, -4px 0 white, 0 4px white, 4px 0 white, 0 -4px white, -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black; color:white
+		}
+
+		.black-to-white {
+		  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, black), color-stop(0.2, #2f2f2e), color-stop(0.6, grey), color-stop(0.9, lightgrey), color-stop(1, #ededed));
+		 
+		  color:transparent;
+		  -webkit-background-clip: text;
+		  background-clip: text;
+		}
+
+		.white-to-black {
+		  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, lightgrey), color-stop(0.4, grey), color-stop(0.9, #2f2f2e), color-stop(1, black));
+		 
+		  color:transparent;
+		  -webkit-background-clip: text;
+		  background-clip: text;
+		}
+
+		.sparkle {
+			
+		 -webkit-text-fill-color: transparent;
+		 background: -webkit-linear-gradient(transparent, transparent),
+		             url(http://www.myspacehippo.com/files/glitterbacks/bg345.gif) repeat;
+		 background: -o-linear-gradient(transparent, transparent);
+		 -webkit-background-clip: text;
+		}
+
+		/*  FLIP CSS  below */
+		#flip {
+		  height:50px;
+		  overflow:hidden;
+		  color: black;
+		  border: solid 2px black;
+		}
+
+		#flip > div > div {
+		  padding:4px 12px;
+		  height:45px;
+		  margin-bottom:45px;
+		  display:inline-block;
+		}
+
+		#flip div:first-child {
+		  animation: show 3s linear infinite;
+		}
+
+		#flip div div {
+		  font-style:italic;
+		   font-weight: normal;
+		}
+		#flip div:first-child div {
+		  font-style: normal;
+		  font-weight: normal;
+		}
+		#flip div:last-child div {
+		  font-weight:bolder;
+		  font-style:normal;
+		}
+
+		@keyframes show {
+		  0% {margin-top:0px;}
+		  70% {margin-top: -66px;}
+		  100% {margin-top:-66px;}
+		}
+	/* for flip css above */
+
+	/* for 3d rotate text below */
+
+
+/*// google font subsetting, see Heydon Pickering's: http://www.sitepoint.com/joy-of-subsets-web-fonts/*/
+		@import url('//fonts.googleapis.com/css?family=Pacifico&text=Good');
+		@import url('//fonts.googleapis.com/css?family=Roboto:700&text=Time');
+		@import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=&#8482');
+
+/*		;
+*/
+		.stage {
+		  height: 100px;
+		  width: 166px;
+		  margin: auto;
+		  position: absolute;
+		  top: 0; right: 0; bottom: 0; left: 400;
+		  perspective: 9999px;
+		  transform-style: preserve-3d;
+		}
+
+		.layer {
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  transform-style: preserve-3d;
+		  animation: ಠ_ಠ 5s infinite alternate ease-in-out -7.5s;
+		  animation-fill-mode: forwards;
+		  transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+		}
+
+		.layer:after {
+		  font: 70px/0.65 'Pacifico', 'Kaushan Script', Futura, 'Roboto', 'Trebuchet MS', Helvetica, sans-serif;
+		  content: 'Good\A    Time™';
+		  white-space: pre;
+		  text-align: center;
+		  height: 100%;
+		  width: 100%;
+		  position: absolute;
+		  top: 50px; 
+		  color: darken(#fff, 4%);
+		  letter-spacing: -2px;
+		  text-shadow: 4px 0 10px hsla(0, 0%, 0%, .13);
+		}
+
+		$i: 1;
+		$NUM_LAYERS: 20;
+		@for $i from 1 through $NUM_LAYERS {
+		  .layer:nth-child(#{$i}):after{
+		    transform: translateZ(($i - 1) * -1.5px);
+		  }
+		}
+
+		.layer:nth-child(n+#{round($NUM_LAYERS/2)}):after {
+		  -webkit-text-stroke: 3px hsla(0, 0%, 0%, .25);
+		}
+
+		.layer:nth-child(n+#{round($NUM_LAYERS/2 + 1)}):after {
+		  -webkit-text-stroke: 15px dodgerblue;
+		  text-shadow: 6px 0 6px darken(dodgerblue,35%),
+		               5px 5px 5px darken(dodgerblue,40%),
+		               0 6px 6px darken(dodgerblue,35%);
+		}
+
+		.layer:nth-child(n+#{round($NUM_LAYERS/2 + 2)}):after {
+		  -webkit-text-stroke: 15px darken(dodgerblue, 10%);
+		}
+
+		.layer:last-child:after {
+		  -webkit-text-stroke: 17px hsla(0, 0%, 0%, .1);
+		}
+
+		.layer:first-child:after{
+		  color: #fff;
+		  text-shadow: none;
+		}
+
+		@keyframes ಠ_ಠ {
+		  100% { transform: rotateY(-40deg) rotateX(-43deg); }
+		}
+
+/* for 3d rotate text above */
+
+	</style>
+
+	<script>
+		$(document).ready(function(){
+		    $(title).mouseover(function(){
+       		 	$(title).css("opacity", "0");
+       		 	$(menu).css("opacity", "1");
+    		});
+    		$(title).mouseout(function(){
+        		$(title).css("opacity", "1");
+        		$(menu).css("opacity", "0");
+    		});
+		});
+	 </script>
+	
+</head>
+
+<body>
+	<div class="header" id="title">
+		Ipsedixitisms
+	</div>
+	<div class="header" id="menu">
+		<a href="what.html">What </a>•  Why  • Filter
+	</div>
+
+	
+
+	<br/>
+<!-- 	<div class="writing">
+		It’s nice to walk through public spaces. It’s calming. I am yet another body existing under an atmosphere, worth exactly as much as the next poor soul. Basically nothing. 
+	In the grocery store I play the same game I always do. What to buy, what to buy? I muse as I multiply servings and calories, counting them up, tallying the tail risk if I somehow lose self-control and eat the entire bag. This definitely matters, I conclude, as I put down the same bag of cookies I always pick up and opt for freeze-dried fruit, instead. I used to believe that staying fit was a competition, every man against one another. Now I realize that it’s a personal competition, and the only important metric is that of oneself and one’s constant improvement. I still subscribe to the former school of thought. Old habits die hard, and I don’t trust the winners who claim it’s not a game, even if they sound nice. Understanding and acceptance are estranged cousins: they acknowledge each other’s presence but don’t keep in touch. 
+I move on to the salty snack aisle. What a glorious aisle because sodium can’t kill me. I was raised under these pretenses and in my stomach of stomachs I believe them to be true: 
+Salt is ok. 
+Fat is bad. Sugar is bad. Smoking is bad. Alcohol is bad. Drugs are bad. Gambling is bad. 
+School is good. Sleep is good. Money is good. Working is good. Sweating is good. Being sane is good. Being nice is good. 
+God probably doesn’t exist but we must pretend he does anyways. 
+Geniuses are assholes and/or crazy. Geniuses are the best.
+
+I used to fight the last assertion with all my might. Why is it fair for a genius to be crazy and successful when the rest of us have to avoid crazy at all costs? After all, I considered myself sane and nice and I still wanted to be a genius. How come I couldn’t be the best of the best? How come I would never have the chance to be heralded as a genius? Because I was competent and polite and mentally stable? That didn’t seem fair.
+ I don’t worry about this complaint anymore. I have discovered that I am, in fact, not sane, and therefore can now be classified as a genius. Not that I automatically will be. But I could be! There is a chance! Ah, you have no idea the relief I felt after I first felt the hellish warfare of a mental breakdown. After the sun came up and all my muses lay slaughtered in a neat pile at the forefront of my skull, I was eligible to become a bonafide prodigy.
+
+Jan 9, 2018
+ Sunsets and your face always look better in person
+	</div> -->
+
+
+
+	<div class="dailyHeader">
+		<div class="dailyWriting">
+			Efficiency is a <br><span style="color:red">red herring</span>
+		</div>
+	</div> <!--close daily header-->
+
+ 	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing2">
+			<span style="text-shadow: -3px 0 orange, 0 3px yellow, 3px 0 pink, 0 -3px yellow;">Sunsets and your face </span> <br> <span style="font-size: 2.5vw">always look better in person</span>
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id='writing3'>
+			Every industry is at least 20%<br><span style="font-family:Nervous; font-weight:normal;">cringe</span>
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing3">
+			An emotion need not have a reason. <br> <span style="font-size: 2vw; font-weight:normal;">Its <span style="text-shadow:  0 1px white, 0 2px black;"> existence </span>justifies its <span style="text-shadow:  0 1px white, 0 2px black;"> manifestation</span>. </span>
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+		<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			Minimalism <span style="font-weight:normal">is a shit excuse for </span> laziness
+		</div>
+		Holland, March 2018
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader" style="background-image: url('flowers.png');
+			background-size: 100%;">
+		<div class="dailyWriting" id="writing2">
+			Flowers are important
+		</div>
+		Holland, March 2018
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing2">
+			Morality is <div id="upsidedown"> contextual </div>
+		</div>
+		Holland, March 2018
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing6">
+			Music is an emotional <span style=" text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black, -4px 0 white, 0 4px white, 4px 0 white, 0 -4px white, -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black; color:white">steroid</span>
+		</div>
+		Holland, March 2018
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing5">
+			ALL HUMANS LOOK ALIKE
+		</div>
+		Holland, March 2018
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			<span class='black-to-white'> Humility doesn't mean thinking less of yourself.</span> <span class='white-to-black'> It means thinking of yourself less. </span>
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			You have to love someone for who they are. <br> <span class="sparkle"> Not their potential</span>
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			<div id=flip>
+			    <div><div>context is a choice</div></div>
+			    <div><div>context is a choice</div></div>
+			    <div><div>context is a choice</div></div>
+			</div>
+		</div>
+		Brazil, February 2018
+	</div> <!--close daily header-->
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			Thinking requires careful control:<br> <span id="writing7">Too little and you can't do anything, too much and you won't.</span>
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			Productivity is a <div class="stage">
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+  <div class="layer"></div>
+</div>
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			Conciseness is a virtue. <br>
+			<span style="font-size:12pt;"> Shut the fuck up. </span>
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			Care about yourself, others won't.
+		</div>
+	</div> <!--close daily header-->
+
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			You're entitled to your own opinions, but not your own facts.
+		</div>
+	</div> <!--close daily header-->
+	Chicago, USA, April 2018
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			Young people are not ruining the world. Deal with it.
+		</div>
+	</div> <!--close daily header-->
+	Chicago, USA, April 2018
+	<div class='spacer'>  </div>
+
+	<div class="dailyHeader">
+		<div class="dailyWriting" id="writing4">
+			Do more with your privilege, not less
+		</div>
+	</div> <!--close daily header-->
+	Chicago, USA, April 2018
+	<div class='spacer'>  </div>
+
+</body>
+
+
+</html>

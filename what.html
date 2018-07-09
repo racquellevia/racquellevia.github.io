@@ -1,0 +1,99 @@
+<html>
+
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<style>
+
+		.header{
+			font-family: serif;
+			font-style: italic;
+			font-weight: bold;	
+		}
+		#title{
+			font-size: 1.5em;
+			text-align: center;
+/*			position:fixed;*/
+			top:10px;
+			margin-left: auto;
+			margin-right: auto;
+			left:0;
+			right:0;
+			z-index: 1;
+			opacity: 1;
+		}
+		#menu{
+			text-align: center;
+			position:fixed;
+			top:20px;
+			margin-left: auto;
+			margin-right: auto;
+			left:0;
+			right:0;
+			z-index: 0;
+			opacity:0;
+		}
+		#explanation{
+			margin: 25vw;
+			margin-top: 0;
+			padding-top: 50px;
+		}
+		.head{
+			font-size: 20pt;
+			margin-top: 80px;
+			line-height: 150%;
+		}
+		.support{
+			line-height: 150%;
+
+
+		</style>
+
+		<script>
+		$(document).ready(function(){
+		    $(title).mouseover(function(){
+       		 	$(title).css("opacity", "0");
+       		 	$(menu).css("opacity", "1");
+    		});
+    		$(title).mouseout(function(){
+        		$(title).css("opacity", "1");
+        		$(menu).css("opacity", "0");
+    		});
+		});
+	 </script>
+
+	</head>
+
+
+	<body>
+
+		<div class="header" id="title">
+			Ipsedixitisms
+		</div>
+		<div class="header" id="menu">
+			<a href="what.html">What </a>•  <a href="why.html">Why</a>  • Filter
+		</div>
+
+		<div id="explanation">	
+			<div class="head">An ipsedixitism is an unsupported, dogmatic assertion. </div>
+			
+			<div class = "support">
+			Some definitions include the adjective "false", but for the purpose of this online collection, the defining feature of my ipsedixitisms is simply that they are published without supporting anecdotes or evidence. Their veracity, or lack thereof, should not to be assumed.
+			 </div>
+
+			<div class= support> These phrases are truths that my experiences have revealed to me through trial and error and the general rocky path of living. I have no other evidence to offer to you, other than the published statements; I have no evidence, no esteemed expertise, and no guarantee that it will apply to you. </div> 
+
+			<div class ="head">I did not believe these statements to be true until I had lived and felt them personally. I do not expect your experience to be different.</div>
+			<div class = "support">No amount of fables, religions, social norms or propaganda were able to truly cement my subscription to these axioms. Only after suffering, celebrating, and ruminating could I finally stand behind the combinations of words published on this website. While I could offer an explanation for each truism, I   will not do so, unless requested.</div>
+			
+			<div class="head">Instead I state my views plainly, as a way to alert you to their possible exisitence, should you choose to care.</div>
+			
+			<div class="support">Perhaps you will find yourself believing some of the truths, perhaps you will find my reality completely false.</div>
+			
+			<div class="head">The title of this website is my way of being the first to acknowledge that these statements are not based on publically available evidence.</div>
+			<div class="support"> Nevertheless, I will continue to publish them, because they bring me joy and comfort and are thought-provoking, and perhaps will do the same for you. 
+			</div>
+		</div>
+	</body>
+
+</html>
