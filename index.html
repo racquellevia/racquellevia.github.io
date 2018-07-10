@@ -1,7 +1,10 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
+	<link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Kumar+One|Chicle|Shrikhand|Bungee" rel="stylesheet">
+
+
 	<style>
 	
 	@import "compass/css3";
@@ -114,136 +117,239 @@
 		}
 
 		.sparkle {
-			
-		 -webkit-text-fill-color: transparent;
-		 background: -webkit-linear-gradient(transparent, transparent),
-		             url(http://www.myspacehippo.com/files/glitterbacks/bg345.gif) repeat;
-		 background: -o-linear-gradient(transparent, transparent);
-		 -webkit-background-clip: text;
+		/*	color: red;
+		`padding: 50px;
+		 background:  url(https://media.giphy.com/media/YfzRO02hXWvOE/giphy.gif) repeat;*/
+		 padding: 50px;
+		 color: red;  /* Fallback: assume this color ON TOP of image */
+   		/*background: url(https://img1.picmix.com/output/stamp/normal/6/0/9/4/254906_3c3d0.gif) repeat;*/
+   		background: url(https://media1.tenor.com/images/d2136938f87e26cb5716efd59ab1012e/tenor.gif?itemid=9724941) repeat;
+   	/*	background: url(https://media1.tenor.com/images/4d3fe2d826b0a401c5a86ccaed54dd2b/tenor.gif?itemid=4717901) repeat;*/
+   		-webkit-background-clip: text;
+   		-webkit-text-fill-color: transparent;
+		 
 		}
 
-		/*  FLIP CSS  below */
+		/*  colorFLIP CSS  below */
 		#flip {
-		  height:50px;
-		  overflow:hidden;
-		  color: black;
-		  border: solid 2px black;
+		color: white;
+		padding: 100px;
+		background-color: #1b5fbd;
+		background: linear-gradient(to top, white, transparent 30%),
+		linear-gradient(to bottom, white, transparent 30%);
+    	-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    	-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    	animation-name: example;
+    	animation-duration: 4s;
+    	animation-iteration-count: infinite;
 		}
 
-		#flip > div > div {
-		  padding:4px 12px;
-		  height:45px;
-		  margin-bottom:45px;
-		  display:inline-block;
+		/* Safari 4.0 - 8.0 */
+		@-webkit-keyframes example {
+		    0%   {background-color: #1b5fbd;}
+		    25%  {background-color: #1f69a1;}
+		    50%  {background-color: #1865d0;}
+		    75%  {background-color: #1f69a1;}
+		    100% {background-color: #1b5fbd;}
 		}
 
-		#flip div:first-child {
-		  animation: show 3s linear infinite;
+		/* Standard syntax */
+		@keyframes example {
+		    0%   {background-color: #1b5fbd;}
+		    25%  {background-color: #1f69a1;}
+		    50%  {background-color: #1865d0;}
+		    75%  {background-color: #1f69a1;}
+		    100% {background-color: #1b5fbd;}
 		}
+		
+	/* for colorflip css above */
 
-		#flip div div {
-		  font-style:italic;
-		   font-weight: normal;
-		}
-		#flip div:first-child div {
-		  font-style: normal;
-		  font-weight: normal;
-		}
-		#flip div:last-child div {
-		  font-weight:bolder;
-		  font-style:normal;
-		}
-
-		@keyframes show {
-		  0% {margin-top:0px;}
-		  70% {margin-top: -66px;}
-		  100% {margin-top:-66px;}
-		}
-	/* for flip css above */
-
-	/* for 3d rotate text below */
 
 
 /*// google font subsetting, see Heydon Pickering's: http://www.sitepoint.com/joy-of-subsets-web-fonts/*/
 		@import url('//fonts.googleapis.com/css?family=Pacifico&text=Good');
 		@import url('//fonts.googleapis.com/css?family=Roboto:700&text=Time');
 		@import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=&#8482');
+		@import url('//fonts.googleapis.com/css?family=Waiting+for+the+Sunrise');
 
-/*		;
-*/
-		.stage {
-		  height: 100px;
-		  width: 166px;
-		  margin: auto;
-		  position: absolute;
-		  top: 0; right: 0; bottom: 0; left: 400;
-		  perspective: 9999px;
-		  transform-style: preserve-3d;
-		}
+	
+/* blur begin */	
+.blur {
+   color: transparent;
+   font-size: 1.1em;
+   text-shadow: 0 0 5px rgba(0,0,0,0.9);
+}
 
-		.layer {
-		  width: 100%;
-		  height: 100%;
-		  position: absolute;
-		  transform-style: preserve-3d;
-		  animation: ಠ_ಠ 5s infinite alternate ease-in-out -7.5s;
-		  animation-fill-mode: forwards;
-		  transform: rotateY(40deg) rotateX(33deg) translateZ(0);
-		}
+/* blur end */
 
-		.layer:after {
-		  font: 70px/0.65 'Pacifico', 'Kaushan Script', Futura, 'Roboto', 'Trebuchet MS', Helvetica, sans-serif;
-		  content: 'Good\A    Time™';
-		  white-space: pre;
-		  text-align: center;
-		  height: 100%;
-		  width: 100%;
-		  position: absolute;
-		  top: 50px; 
-		  color: darken(#fff, 4%);
-		  letter-spacing: -2px;
-		  text-shadow: 4px 0 10px hsla(0, 0%, 0%, .13);
-		}
+/*  color scroll and bounce begin */
+blockquote{
+    overflow: hidden;
+    font-family: 'Shrikhand', sans-serif;
+    /*font-size: 10vw;
+    width: 100vw;*/
+    margin-top: 10px;
+    text-align: center;
+    background: linear-gradient(
+        60deg,
+        hsl(0, 75%, 50%) 10%,
+        hsl(20, 75%, 50%) 10%,
+        hsl(20, 75%, 50%) 25%,
+        hsl(50, 75%, 50%) 25%,
+        hsl(50, 75%, 50%) 40%,
+        hsl(130, 75%, 50%) 40%,
+        hsl(130, 75%, 50%) 55%,
+        hsl(200, 75%, 50%) 55%,
+        hsl(200, 75%, 50%) 70%,
+        hsl(260, 75%, 50%) 70%,
+        hsl(260, 75%, 50%) 85%,
+        hsl(0, 75%, 50%) 85%
+    );
 
-		$i: 1;
-		$NUM_LAYERS: 20;
-		@for $i from 1 through $NUM_LAYERS {
-		  .layer:nth-child(#{$i}):after{
-		    transform: translateZ(($i - 1) * -1.5px);
-		  }
-		}
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: 10s BeProud linear infinite,
+    1s Always ease alternate infinite;
+}
 
-		.layer:nth-child(n+#{round($NUM_LAYERS/2)}):after {
-		  -webkit-text-stroke: 3px hsla(0, 0%, 0%, .25);
-		}
+@keyframes BeProud {
+    100% { background-position: 100vw 0px; }
+}
 
-		.layer:nth-child(n+#{round($NUM_LAYERS/2 + 1)}):after {
-		  -webkit-text-stroke: 15px dodgerblue;
-		  text-shadow: 6px 0 6px darken(dodgerblue,35%),
-		               5px 5px 5px darken(dodgerblue,40%),
-		               0 6px 6px darken(dodgerblue,35%);
-		}
+@keyframes Always {
+    100% { transform: scale(1.1);}
+}
 
-		.layer:nth-child(n+#{round($NUM_LAYERS/2 + 2)}):after {
-		  -webkit-text-stroke: 15px darken(dodgerblue, 10%);
-		}
+/*  color scroll and bounce end */
 
-		.layer:last-child:after {
-		  -webkit-text-stroke: 17px hsla(0, 0%, 0%, .1);
-		}
+/* stamp begin */
+.stamp {
+  transform: rotate(-12deg);
+	color: #555;
+	font-size: 3rem;
+	font-weight: 700;
+	border: 0.25rem solid #555;
+	display: inline-block;
+	padding: 0.25rem 1rem;
+	text-transform: uppercase;
+	border-radius: 1rem;
+	font-family: 'Courier';
+	-webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+  -webkit-mask-size: 944px 604px;
+  mix-blend-mode: multiply; 
+}
 
-		.layer:first-child:after{
-		  color: #fff;
-		  text-shadow: none;
-		}
+.is-nope {
+  color: black;
+  border: 0.5rem double black;
+  transform: rotate(0deg);
+	-webkit-mask-position: 2rem 3rem;
+  font-size: 2rem;  
+}
 
-		@keyframes ಠ_ಠ {
-		  100% { transform: rotateY(-40deg) rotateX(-43deg); }
-		}
+.is-approved {
+	color: red;
+	border: 0.5rem solid red;
+	-webkit-mask-position: 13rem 6rem;
+	transform: rotate(-3deg);
+  border-radius: 0;
+} 
+ /* stamp end */
 
-/* for 3d rotate text above */
+ /*screen begin*/
+
+ .screen {
+ background-color:#000;
+  margin:0;
+  overflow:hidden;
+  padding-top:30px;
+  animation:colorPulse 5s infinite ease-in-out;
+  background-image:radial-gradient(#444, #111);
+  box-shadow:0 0 5vmin 1vmin #000 inset;
+  box-sizing:border-box;
+  font-family:'Fira Mono', monospace;
+  font-size:20px;
+  height:100px;
+  overflow:hidden;
+  padding:10px;
+  width:100%;
+  overflow:hidden;
+}
+
+.screen:before {
+  animation:wave 5s infinite ease-in-out;
+  content:"";
+  height:100px;
+  left:0;
+  opacity:.5;
+  position:absolute;
+  right:0;
+  z-index:1;
+  overflow:hidden;
+}
+
+.screen:after {
+  background-image:linear-gradient(transparent, transparent 3px, #222);
+  background-size:4px 4px;
+  bottom:0;
+  content:"";
+  left:0;
+  pointer-events:none;
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:2;
+  overflow:hidden;
+}
+
+p:last-child:after {
+  animation:blink 1s infinite;
+  content:"_";
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    color:#0c0;
+  }
+  40%,  60% {
+    color:#090;
+  }
+  50% {
+    color:#060;
+  }
+}
+
+@keyframes wave {
+  0% {
+    box-shadow:0 -10px 20px #0c0;
+    top:00px;
+  }
+  48%, 52% {
+    box-shadow:0 -10px 20px #090;
+  }
+  50% {
+    box-shadow:0 -10px 20px #060;
+  }
+  100% {
+    box-shadow:0 -10px 20px #0c0;
+    top:100px;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity:0;
+  }
+  75% {
+    opacity:0;
+  }
+}
+
+/*screen end */
 
 	</style>
+
 
 	<script>
 		$(document).ready(function(){
@@ -256,7 +362,10 @@
         		$(menu).css("opacity", "0");
     		});
 		});
-	 </script>
+
+	</script>
+
+
 	
 </head>
 
@@ -265,7 +374,7 @@
 		Ipsedixitisms
 	</div>
 	<div class="header" id="menu">
-		<a href="what.html">What </a>•  Why  • Filter
+		<a href="what.html">What </a>• <a href="why.html">Why </a> 
 	</div>
 
 	
@@ -308,7 +417,7 @@ Jan 9, 2018
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id='writing3'>
-			Every industry is at least 20%<br><span style="font-family:Nervous; font-weight:normal;">cringe</span>
+			Every passion is at least 20%<br><span style="font-family:Nervous; font-weight:normal;">cringe</span>
 		</div>
 	</div> <!--close daily header-->
 
@@ -378,7 +487,7 @@ Jan 9, 2018
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
-			You have to love someone for who they are. <br> <span class="sparkle"> Not their potential</span>
+			<span style="color: #781d70;">You have to love someone for who they are.</span><br> <span class="sparkle"> Not their potential</span>
 		</div>
 	</div> <!--close daily header-->
 
@@ -387,9 +496,7 @@ Jan 9, 2018
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
 			<div id=flip>
-			    <div><div>context is a choice</div></div>
-			    <div><div>context is a choice</div></div>
-			    <div><div>context is a choice</div></div>
+			    <div><div>Context is a choice</div></div>
 			</div>
 		</div>
 		Brazil, February 2018
@@ -405,28 +512,7 @@ Jan 9, 2018
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
-			Productivity is a <div class="stage">
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-  <div class="layer"></div>
-</div>
+			Productivity is a <blockquote> Good Time&trade;</blockquote>
 		</div>
 	</div> <!--close daily header-->
 
@@ -435,43 +521,44 @@ Jan 9, 2018
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
-			Conciseness is a virtue. <br>
-			<span style="font-size:12pt;"> Shut the fuck up. </span>
+			<span style="line-height:200%">Conciseness is a virtue. <br></span>
+			
+			<marquee behavior="scroll" direction="up" scrollamount="2"style="height:15px; text-align: center; font-size: .4em;">Shut the fuck up.</marquee>
 		</div>
 	</div> <!--close daily header-->
 
 	<div class='spacer'>  </div>
 
-	<div class="dailyHeader">
-		<div class="dailyWriting" id="writing4">
-			Always are about yourself, others won't.
-		</div>
-	</div> <!--close daily header-->
+
 
 	<div class='spacer'>  </div>
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
-			You're entitled to your own opinions, but not your own facts.
+			<span class="stamp is-nope">You're entitled to your own opinions</span><br><br> <span class="stamp is-approved">not your own facts </span>
 		</div>
+		<br>
+		Chicago, USA, April 2018
 	</div> <!--close daily header-->
-	Chicago, USA, April 2018
+	
 	<div class='spacer'>  </div>
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
 			Young people are not ruining the world. Deal with it.
 		</div>
+		Chicago, USA, April 2018
 	</div> <!--close daily header-->
-	Chicago, USA, April 2018
+	
 	<div class='spacer'>  </div>
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
-			Do more with your privilege, not less
+			Do more with your privilege, not less.
 		</div>
+		Chicago, USA, April 2018
 	</div> <!--close daily header-->
-	Chicago, USA, April 2018
+	
 	<div class='spacer'>  </div>
 
 	<div class="dailyHeader">
@@ -506,7 +593,9 @@ Jan 9, 2018
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
-			The system does not process love efficiently.
+			<div class="screen">
+				The system does not process love efficiently.
+			</div>
 		</div>
 	</div> <!--close daily header-->
 	<div class='spacer'>  </div>
