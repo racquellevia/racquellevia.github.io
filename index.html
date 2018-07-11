@@ -226,8 +226,7 @@ blockquote{
 /* stamp begin */
 .stamp {
   transform: rotate(-12deg);
-	color: #555;
-	font-size: 3rem;
+	font-size: 1.2em;
 	font-weight: 700;
 	border: 0.25rem solid #555;
 	display: inline-block;
@@ -238,6 +237,15 @@ blockquote{
 	-webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
   -webkit-mask-size: 944px 604px;
   mix-blend-mode: multiply; 
+}
+
+.plaque{
+	
+	font-weight: 700;
+	display: inline-block;
+	font-family: 'Courier';
+	text-transform: uppercase;
+
 }
 
 .is-nope {
@@ -263,7 +271,7 @@ blockquote{
  background-color:#000;
   margin:0;
   overflow:hidden;
-  padding-top:30px;
+  
   animation:colorPulse 5s infinite ease-in-out;
   background-image:radial-gradient(#444, #111);
   box-shadow:0 0 5vmin 1vmin #000 inset;
@@ -273,8 +281,10 @@ blockquote{
   height:100px;
   overflow:hidden;
   padding:10px;
+  padding-top:5%;
   width:100%;
   overflow:hidden;
+
 }
 
 .screen:before {
@@ -286,7 +296,6 @@ blockquote{
   position:absolute;
   right:0;
   z-index:1;
-  overflow:hidden;
 }
 
 .screen:after {
@@ -300,7 +309,6 @@ blockquote{
   right:0;
   top:0;
   z-index:2;
-  overflow:hidden;
 }
 
 p:last-child:after {
@@ -321,21 +329,19 @@ p:last-child:after {
 }
 
 @keyframes wave {
-  0% {
-    box-shadow:0 -10px 20px #0c0;
-    top:00px;
-  }
-  48%, 52% {
-    box-shadow:0 -10px 20px #090;
-  }
-  50% {
-    box-shadow:0 -10px 20px #060;
-  }
-  100% {
-    box-shadow:0 -10px 20px #0c0;
-    top:100px;
-  }
+0% {
+  border-top: 4px solid #0a9405;
+  /*border-image: linear-gradient(to left, green , red);
+  border-image-slice: 1;*/
+  top:00px;
 }
+
+100% {
+ border-top: 4px solid #045102;
+  top:94px;
+}
+}
+
 
 @keyframes blink {
   50% {
@@ -347,6 +353,23 @@ p:last-child:after {
 }
 
 /*screen end */
+
+#humancontainer
+{
+background-image: url(https://media.giphy.com/media/Eo9245y8LcSU8/giphy.gif);
+background-repeat: no-repeat;
+height: 200px;
+width: 300px;
+margin: 0 auto;
+color:red;
+background-position: center;
+padding-top:90px;
+padding-bottom:1px;
+padding-left:40px;
+padding-right:40px;
+font-size: 25px;
+background-color: red;
+}
 
 	</style>
 
@@ -470,7 +493,9 @@ Jan 9, 2018
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing5">
-			ALL HUMANS LOOK ALIKE
+			<div id="humancontainer"> 
+				ALL HUMANS LOOK ALIKE 
+			</div>
 		</div>
 		Holland, March 2018
 	</div> <!--close daily header-->
@@ -535,7 +560,7 @@ Jan 9, 2018
 
 	<div class="dailyHeader">
 		<div class="dailyWriting" id="writing4">
-			<span class="stamp is-nope">You're entitled to your own opinions</span><br><br> <span class="stamp is-approved">not your own facts </span>
+			<span class="plaque">You're entitled to your own opinions</span><br><br> <span class="stamp is-approved">not your own facts </span>
 		</div>
 		<br>
 		Chicago, USA, April 2018
