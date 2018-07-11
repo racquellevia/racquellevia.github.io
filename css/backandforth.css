@@ -1,0 +1,90 @@
+
+#backAndForth {
+  /*margin: 0;*/
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2vw;
+  /*min-height: 100vh;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+}
+
+#backAndForth h1 { margin: 0; }
+#backAndForth   .bigC, .h, .o, .thei, .lilC, .e, .contextC, .contextO, .contextN, .contextTfirst, .contextE, .contextX, .contextTlast {
+  animation-timing-function: ease-in-out;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+
+.bigC { padding-left: 10px;  animation-name: bigC; }
+.h { animation-name: h; }
+.o { animation-name: o; }
+.thei { animation-name: thei; }
+.lilC {  animation-name: lilC; }
+.e { animation-name: e; }
+.contextC { animation-name: conC; }
+.contextO { animation-name: conO; }
+.contextN { animation-name: conN; }
+.contextTfirst { animation-name: conTf; }
+.contextE { animation-name: conE; }
+.contextX { animation-name: conX; }
+.contextTlast { padding-right: 13px; animation-name: conTl; }
+
+@keyframes conC { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(-400%); }
+}
+@keyframes conO { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(-380%); }
+}
+@keyframes conN { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(-290%); }
+}
+@keyframes conTf { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(-390%); }
+}
+@keyframes conE { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(-180%); }
+}
+@keyframes conX { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(-140%); }
+}
+@keyframes conTl { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(-90%); }
+}
+
+
+@keyframes bigC { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(70%); }
+}
+@keyframes h { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(180%); }
+}
+@keyframes o{ 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(250%); }
+}
+@keyframes thei { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(670%); }
+}
+@keyframes lilC { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(440%); }
+}
+@keyframes e { 
+  0%, 20% { transform: translateX(0); }
+  50%, 70% { transform: translateX(500%); }
+}
